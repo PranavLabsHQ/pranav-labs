@@ -7,7 +7,7 @@ import { navigationItems, siteConfig } from "@/content/site";
 const footerLinks = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
-  { label: "GitHub", href: "https://github.com" },
+  { label: "GitHub", href: "https://github.com/ItzPranav61" },
   { label: "LinkedIn", href: "https://linkedin.com" },
 ];
 
@@ -20,7 +20,7 @@ export function Footer() {
             <Logo />
             <p className="max-w-md text-sm leading-6 text-muted-foreground">
               Pranav Labs builds AI products, automation systems, developer
-              tools, and modern software designed to last.
+              tools, and business software designed to last.
             </p>
           </div>
           <div>
@@ -28,7 +28,7 @@ export function Footer() {
             <div className="mt-4 grid gap-3">
               {navigationItems.slice(0, 5).map((item) => (
                 <Link
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
                   href={item.href}
                   key={item.href}
                 >
@@ -41,14 +41,14 @@ export function Footer() {
             <h2 className="text-sm font-semibold">Contact</h2>
             <div className="mt-4 grid gap-3">
               <a
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
                 href={`mailto:${siteConfig.email}`}
               >
                 {siteConfig.email}
               </a>
               {footerLinks.map((item) => (
                 <Link
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
                   href={item.href}
                   key={item.href}
                 >

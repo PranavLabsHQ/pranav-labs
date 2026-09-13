@@ -10,7 +10,7 @@ import { siteConfig } from "@/content/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Pranav Labs to discuss AI products, automation systems, developer tools, and modern software.",
+    "Contact Pranav Labs to discuss AI products, automation systems, developer tools, and business software.",
 };
 
 export default function ContactPage() {
@@ -41,7 +41,7 @@ export default function ContactPage() {
           </div>
           <form
             action={`mailto:${siteConfig.email}`}
-            className="grid gap-5 rounded-2xl border border-border bg-card p-6 shadow-sm"
+            className="grid gap-5 rounded-xl border border-border bg-card p-6 shadow-sm"
             method="post"
           >
             <label className="grid gap-2 text-sm font-medium">

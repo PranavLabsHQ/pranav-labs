@@ -36,7 +36,7 @@ export default function OpenSourcePage() {
           <div className="grid gap-4">
             {openSourcePrinciples.map((principle) => (
               <div
-                className="rounded-2xl border border-border bg-card p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-sm"
                 key={principle}
               >
                 <p className="text-lg font-medium">{principle}</p>

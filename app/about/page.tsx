@@ -49,7 +49,7 @@ export default function AboutPage() {
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
               <div
-                className="rounded-2xl border border-border bg-background p-6"
+                className="rounded-xl border border-border bg-background p-6"
                 key={step.title}
               >
                 <h3 className="text-xl font-semibold">{step.title}</h3>

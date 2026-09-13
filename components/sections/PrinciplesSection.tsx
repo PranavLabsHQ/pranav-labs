@@ -9,7 +9,7 @@ export function PrinciplesSection() {
         <SectionHeader
           description="The website, codebase, and future products all share the same operating principles."
           eyebrow="Why Pranav Labs"
-          title="Calm software, serious engineering."
+          title="Calm interfaces. Serious engineering."
         />
         <div className="grid gap-5 md:grid-cols-3">
           {principles.map((principle, index) => {
@@ -17,7 +17,7 @@ export function PrinciplesSection() {
 
             return (
               <FadeIn delay={index * 0.04} key={principle.title}>
-                <div className="h-full rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <div className="h-full rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
                   <Icon aria-hidden="true" className="h-6 w-6 text-primary" />
                   <h3 className="mt-5 text-xl font-semibold">
                     {principle.title}

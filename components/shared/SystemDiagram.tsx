@@ -22,20 +22,20 @@ export function SystemDiagram() {
   return (
     <div
       aria-label="Pranav Labs software delivery system"
-      className="relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm"
+      className="relative overflow-hidden rounded-xl border border-border bg-card p-4 shadow-sm md:p-5"
     >
-      <div className="absolute inset-0 subtle-grid opacity-60" />
+      <div className="absolute inset-0 subtle-grid opacity-50" />
       <div className="relative space-y-5">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <p className="text-sm font-medium text-muted-foreground">
+            <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
               System view
             </p>
-            <p className="mt-1 text-xl font-semibold">
+            <p className="mt-2 text-xl font-semibold tracking-[-0.01em]">
               From problem to reliable software.
             </p>
           </div>
-          <div className="rounded-xl border border-border bg-background p-3">
+          <div className="rounded-lg border border-border bg-background p-3">
             <Database aria-hidden="true" className="h-5 w-5 text-primary" />
           </div>
         </div>
@@ -46,7 +46,7 @@ export function SystemDiagram() {
 
             return (
               <div className="contents" key={node.title}>
-                <div className="rounded-xl border border-border bg-background/90 p-4">
+                <div className="rounded-lg border border-border bg-background/90 p-4">
                   <Icon aria-hidden="true" className="h-5 w-5 text-primary" />
                   <h3 className="mt-4 text-base font-semibold">{node.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted-foreground">
@@ -62,11 +62,11 @@ export function SystemDiagram() {
             );
           })}
         </div>
-        <div className="rounded-xl border border-border bg-background/90 p-4">
+        <div className="rounded-lg border border-border bg-background/90 p-4">
           <div className="flex flex-wrap gap-2">
             {["Fast", "Accessible", "Documented", "Maintainable"].map((item) => (
               <span
-                className="rounded-full border border-border px-3 py-1 text-xs font-medium text-muted-foreground"
+                className="rounded-full border border-border bg-card/60 px-3 py-1 text-xs font-medium text-muted-foreground"
                 key={item}
               >
                 {item}

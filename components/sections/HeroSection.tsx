@@ -10,24 +10,23 @@ const proofPoints = [
   "AI products",
   "Automation systems",
   "Developer tools",
-  "Business software",
+  "Business systems",
 ];
 
 export function HeroSection() {
   return (
     <section className="aurora-surface relative overflow-hidden">
       <div className="absolute inset-0 subtle-grid opacity-70" />
-      <div className="container-wide relative grid gap-12 py-20 md:py-28 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-32">
-        <FadeIn className="space-y-8">
+      <div className="container-wide relative grid gap-10 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:py-28 xl:py-32">
+        <FadeIn className="space-y-7">
           <Badge>Engineering Ideas Into Impact.</Badge>
-          <div className="space-y-6">
-            <h1 className="max-w-4xl text-5xl font-bold tracking-normal text-foreground md:text-7xl">
+          <div className="space-y-5">
+            <h1 className="text-balance max-w-4xl text-5xl font-bold tracking-[-0.03em] text-foreground md:text-7xl">
               We build software.
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
               Pranav Labs builds AI products, automation systems, developer
-              tools, and modern applications for teams that need reliable
-              software.
+              tools, and business software for teams that need reliable systems.
             </p>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">

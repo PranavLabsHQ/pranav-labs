@@ -14,9 +14,9 @@ export function FeaturedProjectsSection() {
     <section className="border-y border-border bg-card py-20 md:py-32">
       <div className="container-wide space-y-12">
         <SectionHeader
-          description="Current work is focused on building a foundation for client delivery, internal systems, and future products."
+          description="Current work is focused on client delivery systems, internal infrastructure, and product foundations."
           eyebrow="Featured work"
-          title="Early systems with a product-company mindset."
+          title="Early systems built with product discipline."
         />
         <div className="grid gap-5 lg:grid-cols-3">
           {featuredProjects.map((project, index) => (
@@ -27,7 +27,7 @@ export function FeaturedProjectsSection() {
                     <p className="text-sm font-medium text-primary">
                       {project.type}
                     </p>
-                    <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
+                    <span className="rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground">
                       {project.status}
                     </span>
                   </div>

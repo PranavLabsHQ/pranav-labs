@@ -9,19 +9,19 @@ export function Logo({ compact = false }: LogoProps) {
   return (
     <Link
       aria-label="Pranav Labs home"
-      className="inline-flex items-center gap-3"
+      className="inline-flex items-center gap-3 rounded-lg py-1 pr-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4 focus-visible:ring-offset-background"
       href="/"
     >
       <Image
         alt=""
-        className="h-8 w-8"
-        height={32}
+        className="h-9 w-9 object-contain"
+        height={36}
         priority
-        src="/pranav-labs-icon.svg"
-        width={32}
+        src="/brand/pranav-labs-mark.png"
+        width={36}
       />
       {!compact ? (
-        <span className="text-sm font-semibold tracking-normal">
+        <span className="text-sm font-semibold tracking-[-0.01em] text-foreground">
           Pranav Labs
         </span>
       ) : null}

@@ -7,7 +7,7 @@ export function ProcessSection() {
     <section className="bg-background py-20 md:py-32">
       <div className="container-wide space-y-12">
         <SectionHeader
-          description="Every engagement starts with understanding the problem. The process stays small enough to move quickly and structured enough to protect quality."
+          description="Every engagement starts with the problem. The process stays small enough to move quickly and structured enough to protect quality."
           eyebrow="Process"
           title="A practical path from idea to shipped software."
         />

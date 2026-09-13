@@ -6,14 +6,14 @@ export function TechnologyStackSection() {
     <section className="border-y border-border bg-card py-20 md:py-32">
       <div className="container-wide grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <SectionHeader
-          description="Tools are chosen for maintainability, speed, and long-term value. The stack can evolve, but the decision filter stays stable."
+          description="Tools are chosen for maintainability, speed, and long-term value. The stack can evolve; the decision filter stays stable."
           eyebrow="Technology"
           title="A modern stack for reliable software."
         />
         <div className="grid gap-5 sm:grid-cols-2">
           {technologyGroups.map((group) => (
             <div
-              className="rounded-2xl border border-border bg-background p-6"
+              className="rounded-xl border border-border bg-background p-6 shadow-sm"
               key={group.title}
             >
               <h3 className="text-lg font-semibold">{group.title}</h3>

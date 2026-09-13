@@ -25,7 +25,7 @@ export default function ProductsPage() {
 
             return (
               <div
-                className="rounded-2xl border border-border bg-card p-6 shadow-sm"
+                className="rounded-xl border border-border bg-card p-6 shadow-sm"
                 key={item.title}
               >
                 <Icon aria-hidden="true" className="h-6 w-6 text-primary" />

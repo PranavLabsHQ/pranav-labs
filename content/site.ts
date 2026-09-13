@@ -20,7 +20,7 @@ export const siteConfig = {
   url: "https://pranavlabs.com",
   email: "hello@pranavlabs.com",
   description:
-    "Pranav Labs builds AI products, automation systems, developer tools, and modern software for businesses and engineering teams.",
+    "Pranav Labs builds AI products, automation systems, developer tools, business software, and future software infrastructure.",
 };
 
 export const navigationItems: NavigationItem[] = [
@@ -37,28 +37,28 @@ export const services: Service[] = [
   {
     title: "AI products",
     description:
-      "Assistants, copilots, search systems, and AI workflows built around real operational problems.",
-    capabilities: ["AI workflows", "Knowledge systems", "Agent tooling"],
+      "Assistants, copilots, search systems, and AI workflows designed around repeatable work.",
+    capabilities: ["AI workflows", "Knowledge systems", "Agent systems"],
     icon: BrainCircuit,
   },
   {
     title: "Automation systems",
     description:
-      "Software that removes repetitive work from sales, support, documents, and internal operations.",
+      "Workflow software for sales, support, documents, and internal operations.",
     capabilities: ["CRM automation", "Document flows", "Operations tooling"],
     icon: Workflow,
   },
   {
     title: "Business software",
     description:
-      "Dashboards, portals, internal tools, and SaaS foundations designed for daily business use.",
+      "Dashboards, portals, internal tools, and SaaS foundations designed for daily use.",
     capabilities: ["Admin panels", "Client portals", "Reporting systems"],
     icon: ServerCog,
   },
   {
     title: "Developer tools",
     description:
-      "APIs, SDKs, CLIs, and open-source utilities that help engineers move faster with confidence.",
+      "APIs, SDKs, CLIs, and utilities that help engineers ship with confidence.",
     capabilities: ["CLI tools", "APIs", "SDKs"],
     icon: Code2,
   },
@@ -70,7 +70,7 @@ export const featuredProjects: Project[] = [
     type: "Business platform",
     status: "In development",
     description:
-      "A software foundation for managing project delivery, client work, and operational systems.",
+      "A foundation for managing project delivery, client work, and operational systems.",
     stack: ["Next.js", "PostgreSQL", "Automation"],
   },
   {
@@ -78,7 +78,7 @@ export const featuredProjects: Project[] = [
     type: "Modern web application",
     status: "In progress",
     description:
-      "A local-first product direction focused on useful discovery, clean workflows, and reliable data.",
+      "A local-first product direction focused on discovery, clean workflows, and reliable data.",
     stack: ["React", "Maps", "Product UX"],
   },
   {
@@ -86,7 +86,7 @@ export const featuredProjects: Project[] = [
     type: "Automation infrastructure",
     status: "Active research",
     description:
-      "Reusable AI workflows for research, development, documentation, testing, and delivery operations.",
+      "Reusable workflows for research, development, documentation, testing, and delivery.",
     stack: ["OpenAI", "n8n", "TypeScript"],
   },
 ];
@@ -190,7 +190,7 @@ export const trustedTechnologies = [
 export const roadmapItems = [
   {
     title: "Engineering studio",
-    description: "Client software, AI automation, internal tools, and modern web applications.",
+    description: "Client software, AI automation, internal tools, and modern applications.",
     icon: Layers3,
   },
   {

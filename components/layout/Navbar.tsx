@@ -13,16 +13,16 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-background/88 backdrop-blur-xl">
       <nav
         aria-label="Main navigation"
-        className="container-wide flex h-16 items-center justify-between"
+        className="container-wide flex h-[4.5rem] items-center justify-between"
       >
         <Logo />
-        <div className="hidden items-center gap-1 lg:flex">
+        <div className="hidden items-center gap-0.5 lg:flex">
           {navigationItems.map((item) => (
             <Link
-              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary/80 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               href={item.href}
               key={item.href}
             >
@@ -30,7 +30,7 @@ export function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center gap-2.5 lg:flex">
           <ThemeToggle />
           <Button asChild>
             <Link href="/contact">Start a Project</Link>

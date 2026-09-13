@@ -7,23 +7,21 @@ import { Button } from "@/components/ui/button";
 
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
-  const nextTheme = resolvedTheme === "dark" ? "light" : "dark";
-
   return (
     <Button
-      aria-label={`Switch to ${nextTheme} mode`}
-      onClick={() => setTheme(nextTheme)}
+      aria-label="Toggle color theme"
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
       size="icon"
       type="button"
       variant="ghost"
     >
       <Sun
         aria-hidden="true"
-        className="h-5 w-5 scale-100 transition-transform dark:scale-0"
+        className="h-[1.15rem] w-[1.15rem] scale-100 transition-transform dark:scale-0"
       />
       <Moon
         aria-hidden="true"
-        className="absolute h-5 w-5 scale-0 transition-transform dark:scale-100"
+        className="absolute h-[1.15rem] w-[1.15rem] scale-0 transition-transform dark:scale-100"
       />
     </Button>
   );

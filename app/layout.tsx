@@ -25,13 +25,30 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
   icons: {
-    icon: "/pranav-labs-favicon.svg",
+    icon: [
+      { url: "/brand/favicon-64.png", sizes: "64x64", type: "image/png" },
+      { url: "/brand/pranav-labs-mark.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/brand/pranav-labs-app-icon.png", sizes: "512x512", type: "image/png" },
+    ],
+  },
+  alternates: {
+    canonical: siteConfig.url,
   },
   openGraph: {
     title: "Pranav Labs - Software built to last",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: "/brand/pranav-labs-app-icon.png",
+        width: 512,
+        height: 512,
+        alt: "Pranav Labs brand mark",
+      },
+    ],
     type: "website",
   },
   robots: {
@@ -42,6 +59,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Pranav Labs - Software built to last",
     description: siteConfig.description,
+    images: ["/brand/pranav-labs-app-icon.png"],
   },
 };
 
@@ -58,6 +76,17 @@ type RootLayoutProps = {
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: `${siteConfig.url}/brand/pranav-labs-app-icon.png`,
+    email: siteConfig.email,
+    description: siteConfig.description,
+    sameAs: ["https://github.com/ItzPranav61"],
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geist.variable} min-h-screen font-sans antialiased`}>
@@ -67,6 +96,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Footer />
         </ThemeProvider>
         <Analytics />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+          type="application/ld+json"
+        />
       </body>
     </html>
   );
