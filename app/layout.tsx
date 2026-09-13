@@ -91,8 +91,16 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body className={`${geist.variable} min-h-screen font-sans antialiased`}>
         <ThemeProvider>
+          <a
+            className="skip-link rounded-lg bg-foreground px-4 py-2 text-sm font-medium text-background shadow-md transition-transform"
+            href="#main-content"
+          >
+            Skip to content
+          </a>
           <Navbar />
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
           <Footer />
         </ThemeProvider>
         <Analytics />
