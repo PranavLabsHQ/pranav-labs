@@ -149,7 +149,7 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Designing",
     description:
       "A small set of accessible interface primitives for Pranav Labs products.",
-    githubHref: "https://github.com/PranavLabsHQ/pl-ui",
+    githubHref: "https://github.com/PranavLabsHQ",
     docsHref: "/docs/open-source",
     icon: Blocks,
   },
@@ -159,7 +159,7 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Planned",
     description:
       "A focused icon set for engineering, automation, and product interfaces.",
-    githubHref: "https://github.com/PranavLabsHQ/pl-icons",
+    githubHref: "https://github.com/PranavLabsHQ",
     docsHref: "/docs/open-source",
     icon: Sparkles,
   },
@@ -169,7 +169,7 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Research",
     description:
       "Command-line utilities for scaffolding, checks, release notes, and project hygiene.",
-    githubHref: "https://github.com/PranavLabsHQ/pl-cli",
+    githubHref: "https://github.com/PranavLabsHQ",
     docsHref: "/docs/open-source",
     icon: TerminalSquare,
   },
@@ -179,7 +179,7 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Planned",
     description:
       "A production-ready Next.js starter shaped around accessibility, SEO, and clean delivery.",
-    githubHref: "https://github.com/PranavLabsHQ/starter-kit",
+    githubHref: "https://github.com/PranavLabsHQ",
     docsHref: "/docs/open-source",
     icon: Package,
   },
@@ -189,7 +189,7 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Planned",
     description:
       "A future product foundation for auth, billing, dashboards, teams, and audit logs.",
-    githubHref: "https://github.com/PranavLabsHQ/saas-boilerplate",
+    githubHref: "https://github.com/PranavLabsHQ",
     docsHref: "/docs/open-source",
     icon: Building2,
   },

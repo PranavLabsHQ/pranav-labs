@@ -1,15 +1,17 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { ContentGrid } from "@/components/shared/ContentGrid";
 import { PageHero } from "@/components/shared/PageHero";
 import { caseStudies } from "@/content/ecosystem";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Case Studies",
   description:
     "Reusable Pranav Labs case study system covering challenge, research, architecture, engineering, results, and lessons.",
-};
+  path: "/work/case-studies",
+  keywords: ["case studies", "software architecture", "engineering results"],
+});
 
 export default function CaseStudiesPage() {
   return (

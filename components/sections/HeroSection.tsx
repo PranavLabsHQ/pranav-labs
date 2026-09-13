@@ -5,6 +5,7 @@ import { FadeIn } from "@/components/shared/FadeIn";
 import { SystemDiagram } from "@/components/shared/SystemDiagram";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { getWhatsAppHref } from "@/lib/contact";
 
 const proofPoints = [
   "AI products",
@@ -14,6 +15,8 @@ const proofPoints = [
 ];
 
 export function HeroSection() {
+  const whatsAppHref = getWhatsAppHref();
+
   return (
     <section className="aurora-surface relative overflow-hidden">
       <div className="absolute inset-0 subtle-grid opacity-70" />
@@ -31,7 +34,7 @@ export function HeroSection() {
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <Link href="/contact">
+              <Link href={whatsAppHref} rel="noreferrer" target="_blank">
                 Start a Project
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </Link>

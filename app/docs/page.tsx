@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
-
 import { ContentGrid } from "@/components/shared/ContentGrid";
 import { PageHero } from "@/components/shared/PageHero";
 import { docsSections } from "@/content/ecosystem";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Docs",
   description:
     "Pranav Labs documentation for brand, engineering, products, APIs, architecture, blog, and contributing.",
-};
+  path: "/docs",
+  keywords: ["Pranav Labs docs", "engineering docs", "brand docs"],
+});
 
 export default function DocsPage() {
   return (

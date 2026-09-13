@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -6,12 +5,15 @@ import { FeaturedProjectsSection } from "@/components/sections/FeaturedProjectsS
 import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/shared/PageHero";
 import { Button } from "@/components/ui/button";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Work",
   description:
     "Explore current Pranav Labs work across business software, automation infrastructure, and product foundations.",
-};
+  path: "/work",
+  keywords: ["software case studies", "Pranav Labs work"],
+});
 
 export default function WorkPage() {
   return (

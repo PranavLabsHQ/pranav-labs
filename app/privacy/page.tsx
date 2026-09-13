@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-
 import { PageHero } from "@/components/shared/PageHero";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Privacy",
   description: "Privacy policy for Pranav Labs.",
-};
+  path: "/privacy",
+  keywords: ["privacy policy", "Pranav Labs privacy"],
+});
 
 export default function PrivacyPage() {
   return (

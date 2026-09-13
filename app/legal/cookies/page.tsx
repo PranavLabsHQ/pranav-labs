@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
-
 import { PageHero } from "@/components/shared/PageHero";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Cookies",
   description:
     "Cookie and analytics information for the Pranav Labs website.",
-};
+  path: "/legal/cookies",
+  keywords: ["cookies", "analytics", "privacy"],
+});
 
 const sections = [
   {

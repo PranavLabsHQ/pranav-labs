@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
-
 import { ContentGrid } from "@/components/shared/ContentGrid";
 import { PageHero } from "@/components/shared/PageHero";
 import { legalPages } from "@/content/ecosystem";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Legal",
   description:
     "Legal and privacy documents for the Pranav Labs website and future product surfaces.",
-};
+  path: "/legal",
+  keywords: ["Pranav Labs legal", "privacy", "terms"],
+});
 
 export default function LegalPage() {
   return (

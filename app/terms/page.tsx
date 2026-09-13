@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-
 import { PageHero } from "@/components/shared/PageHero";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Terms",
   description: "Terms for using the Pranav Labs website.",
-};
+  path: "/terms",
+  keywords: ["terms", "Pranav Labs terms"],
+});
 
 export default function TermsPage() {
   return (

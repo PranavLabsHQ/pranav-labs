@@ -17,7 +17,7 @@ import type { Article, NavigationItem, Project, Service } from "@/types/site";
 
 export const siteConfig = {
   name: "Pranav Labs",
-  url: "https://pranavlabs.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://pranav-labs.vercel.app",
   email: "hello@pranavlabs.com",
   description:
     "Pranav Labs builds AI products, automation systems, developer tools, business software, and future software infrastructure.",

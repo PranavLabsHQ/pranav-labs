@@ -9,7 +9,6 @@ const footerLinks = [
   { label: "Terms", href: "/terms" },
   { label: "Cookies", href: "/legal/cookies" },
   { label: "GitHub", href: "https://github.com/PranavLabsHQ" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
 ];
 
 const ecosystemLinks = [
@@ -59,6 +58,8 @@ export function Footer() {
                   className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
                   href={item.href}
                   key={item.href}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
                 >
                   {item.label}
                 </Link>

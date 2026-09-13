@@ -10,12 +10,14 @@ import { Logo } from "@/components/layout/Logo";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { navigationItems } from "@/content/site";
+import { getWhatsAppHref } from "@/lib/contact";
 import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const whatsAppHref = getWhatsAppHref();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     damping: 28,
@@ -85,7 +87,9 @@ export function Navbar() {
         <div className="hidden items-center gap-2.5 lg:flex">
           <ThemeToggle />
           <Button asChild>
-            <Link href="/contact">Start a Project</Link>
+            <Link href={whatsAppHref} rel="noreferrer" target="_blank">
+              Start a Project
+            </Link>
           </Button>
         </div>
         <div className="flex items-center gap-2 lg:hidden">
@@ -138,7 +142,9 @@ export function Navbar() {
                 );
               })}
               <Button asChild className="mt-2">
-                <Link href="/contact">Start a Project</Link>
+                <Link href={whatsAppHref} rel="noreferrer" target="_blank">
+                  Start a Project
+                </Link>
               </Button>
             </div>
           </motion.div>

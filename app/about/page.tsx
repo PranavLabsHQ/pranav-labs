@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
-
 import { PageHero } from "@/components/shared/PageHero";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
 import { processSteps } from "@/content/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "About",
   description:
     "Learn about the mission, engineering philosophy, and long-term direction behind Pranav Labs.",
-};
+  path: "/about",
+  keywords: ["Pranav Labs mission", "engineering philosophy"],
+});
 
 export default function AboutPage() {
   return (

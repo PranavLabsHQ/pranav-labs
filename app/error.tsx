@@ -1,27 +1,31 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
-export default function NotFound() {
+type ErrorPageProps = {
+  error: Error & { digest?: string };
+  reset: () => void;
+};
+
+export default function ErrorPage({ error, reset }: ErrorPageProps) {
   return (
     <section className="container-wide flex min-h-[70vh] flex-col items-start justify-center gap-6 py-20">
-      <p className="text-sm font-medium text-primary">404</p>
+      <p className="text-sm font-medium text-primary">Something went wrong</p>
       <h1 className="text-4xl font-bold tracking-normal md:text-6xl">
-        Page not found.
+        The page could not load.
       </h1>
       <p className="max-w-xl text-lg leading-8 text-muted-foreground">
-        The page may have moved, or the route has not been published yet.
+        The site hit an unexpected error. You can try again or return home.
+        {error.digest ? ` Reference: ${error.digest}.` : null}
       </p>
       <div className="flex flex-col gap-3 sm:flex-row">
-        <Button asChild>
-          <Link href="/">Return Home</Link>
+        <Button onClick={reset} type="button">
+          Try Again
         </Button>
         <Button asChild variant="secondary">
-          <Link href="/contact">
-            Contact Pranav Labs
-            <ArrowRight aria-hidden="true" className="h-4 w-4" />
-          </Link>
+          <Link href="/">Return Home</Link>
         </Button>
       </div>
     </section>

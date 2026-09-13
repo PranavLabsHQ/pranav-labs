@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Geist } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
+import { MarketingAnalytics } from "@/components/analytics/MarketingAnalytics";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { siteConfig } from "@/content/site";
+import { defaultKeywords } from "@/lib/metadata";
 
 import "./globals.css";
 
@@ -21,6 +23,7 @@ export const metadata: Metadata = {
     template: "%s - Pranav Labs",
   },
   description: siteConfig.description,
+  keywords: defaultKeywords,
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name }],
   creator: siteConfig.name,
@@ -32,9 +35,6 @@ export const metadata: Metadata = {
     apple: [
       { url: "/brand/pranav-labs-app-icon.png", sizes: "512x512", type: "image/png" },
     ],
-  },
-  alternates: {
-    canonical: siteConfig.url,
   },
   openGraph: {
     title: "Pranav Labs - Software built to last",
@@ -60,6 +60,9 @@ export const metadata: Metadata = {
     title: "Pranav Labs - Software built to last",
     description: siteConfig.description,
     images: ["/og/pranav-labs-og.svg"],
+  },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   },
 };
 
@@ -104,6 +107,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <Footer />
         </ThemeProvider>
         <Analytics />
+        <MarketingAnalytics />
         <script
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),

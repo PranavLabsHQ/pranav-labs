@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
-
 import { PageHero } from "@/components/shared/PageHero";
 import { publicRoadmap } from "@/content/ecosystem";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Roadmap",
   description:
     "The public Pranav Labs roadmap across now, next, and future company work.",
-};
+  path: "/roadmap",
+  keywords: ["Pranav Labs roadmap", "software roadmap"],
+});
 
 const roadmapGroups = [
   { title: "Now", items: publicRoadmap.now },

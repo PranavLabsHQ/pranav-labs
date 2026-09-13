@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Search } from "lucide-react";
 
@@ -11,12 +10,15 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { blogCategories, blogPosts } from "@/content/ecosystem";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Blog",
   description:
     "Writing from Pranav Labs on software engineering, AI, automation, architecture, open source, and product development.",
-};
+  path: "/blog",
+  keywords: ["engineering blog", "AI blog", "automation blog"],
+});
 
 type BlogPageProps = {
   searchParams: Promise<{ q?: string; category?: string; tag?: string }>;

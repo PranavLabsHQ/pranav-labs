@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
-
 import { PageHero } from "@/components/shared/PageHero";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Services",
   description:
     "AI products, automation systems, business software, and developer tools from Pranav Labs.",
-};
+  path: "/services",
+  keywords: ["AI products", "automation systems", "business software"],
+});
 
 export default function ServicesPage() {
   return (

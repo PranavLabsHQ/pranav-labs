@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -6,12 +5,15 @@ import { ContentGrid } from "@/components/shared/ContentGrid";
 import { PageHero } from "@/components/shared/PageHero";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { products } from "@/content/ecosystem";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Products",
   description:
     "The product direction for Pranav Labs, including BuildNest and Aaspas.",
-};
+  path: "/products",
+  keywords: ["BuildNest", "Aaspas", "software products"],
+});
 
 export default function ProductsPage() {
   return (

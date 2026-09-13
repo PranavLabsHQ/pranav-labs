@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
-
 import { PageHero } from "@/components/shared/PageHero";
 import { changelogEntries } from "@/content/ecosystem";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Changelog",
   description:
     "Product, website, open-source, and company updates from Pranav Labs.",
-};
+  path: "/changelog",
+  keywords: ["Pranav Labs changelog", "software updates"],
+});
 
 export default function ChangelogPage() {
   return (

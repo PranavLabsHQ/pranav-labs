@@ -2,8 +2,11 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { getWhatsAppHref } from "@/lib/contact";
 
 export function CtaSection() {
+  const whatsAppHref = getWhatsAppHref();
+
   return (
     <section className="bg-background py-20 md:py-32">
       <div className="container-wide">
@@ -22,7 +25,7 @@ export function CtaSection() {
               </p>
             </div>
             <Button asChild size="lg" variant="secondary">
-              <Link href="/contact">
+              <Link href={whatsAppHref} rel="noreferrer" target="_blank">
                 Contact Us
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </Link>

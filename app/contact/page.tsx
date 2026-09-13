@@ -1,19 +1,22 @@
-import type { Metadata } from "next";
-import { Mail } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 
+import { ContactForm } from "@/components/forms/ContactForm";
 import { PageHero } from "@/components/shared/PageHero";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { siteConfig } from "@/content/site";
+import { getWhatsAppHref } from "@/lib/contact";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contact",
   description:
     "Contact Pranav Labs to discuss AI products, automation systems, developer tools, and business software.",
-};
+  path: "/contact",
+  keywords: ["contact Pranav Labs", "software project inquiry"],
+});
 
 export default function ContactPage() {
+  const whatsAppHref = getWhatsAppHref();
+
   return (
     <>
       <PageHero
@@ -38,28 +41,17 @@ export default function ContactPage() {
               <Mail aria-hidden="true" className="h-4 w-4" />
               {siteConfig.email}
             </a>
+            <a
+              className="inline-flex items-center gap-2 text-sm font-medium text-primary"
+              href={whatsAppHref}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <MessageCircle aria-hidden="true" className="h-4 w-4" />
+              WhatsApp
+            </a>
           </div>
-          <form
-            action={`mailto:${siteConfig.email}`}
-            className="grid gap-5 rounded-xl border border-border bg-card p-6 shadow-sm"
-            method="post"
-          >
-            <label className="grid gap-2 text-sm font-medium">
-              Name
-              <Input autoComplete="name" name="name" required />
-            </label>
-            <label className="grid gap-2 text-sm font-medium">
-              Email
-              <Input autoComplete="email" name="email" required type="email" />
-            </label>
-            <label className="grid gap-2 text-sm font-medium">
-              Project
-              <Textarea name="project" required />
-            </label>
-            <Button className="w-fit" type="submit">
-              Send Inquiry
-            </Button>
-          </form>
+          <ContactForm />
         </div>
       </section>
     </>
