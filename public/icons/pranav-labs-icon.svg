@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Pranav Labs icon</title>
+  <rect width="128" height="128" rx="28" fill="#2563eb"/>
+  <path d="M67 23h39v27c0 27-22 49-49 49h-8V80h8c17 0 30-13 30-30v-9H67c-13 0-25 7-33 18L23 76V50c0-15 29-27 44-27Z" fill="#ffffff"/>
+  <path d="M53 78h26v18c0 18-14 32-32 32h-6v-13h6c11 0 20-9 20-20v-6H53c-9 0-17 4-21 12l-9 13V97c0-10 20-19 30-19Z" fill="#ffffff"/>
+</svg>

@@ -19,6 +19,12 @@ export default function manifest(): MetadataRoute.Manifest {
         purpose: "any",
       },
       {
+        src: "/icons/pranav-labs-icon.svg",
+        sizes: "128x128",
+        type: "image/svg+xml",
+        purpose: "any",
+      },
+      {
         src: "/brand/pranav-labs-app-icon.png",
         sizes: "512x512",
         type: "image/png",

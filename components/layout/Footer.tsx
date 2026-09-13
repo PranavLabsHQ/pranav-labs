@@ -7,15 +7,23 @@ import { navigationItems, siteConfig } from "@/content/site";
 const footerLinks = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
-  { label: "GitHub", href: "https://github.com/ItzPranav61" },
+  { label: "Cookies", href: "/legal/cookies" },
+  { label: "GitHub", href: "https://github.com/PranavLabsHQ" },
   { label: "LinkedIn", href: "https://linkedin.com" },
+];
+
+const ecosystemLinks = [
+  { label: "Docs", href: "/docs" },
+  { label: "Roadmap", href: "/roadmap" },
+  { label: "Changelog", href: "/changelog" },
+  { label: "Case Studies", href: "/work/case-studies" },
 ];
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
       <div className="container-wide py-12 md:py-16">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <div className="space-y-5">
             <Logo />
             <p className="max-w-md text-sm leading-6 text-muted-foreground">
@@ -47,6 +55,20 @@ export function Footer() {
                 {siteConfig.email}
               </a>
               {footerLinks.map((item) => (
+                <Link
+                  className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
+                  href={item.href}
+                  key={item.href}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-sm font-semibold">Ecosystem</h2>
+            <div className="mt-4 grid gap-3">
+              {ecosystemLinks.map((item) => (
                 <Link
                   className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
                   href={item.href}

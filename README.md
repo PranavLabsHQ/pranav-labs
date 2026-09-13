@@ -21,6 +21,15 @@ npm run build
 - `components/ui/` contains shadcn-compatible primitives used across the site.
 - `content/` contains structured copy and content data.
 - `docs/` remains the source of truth for brand, design, engineering, and product direction.
+- `blog/`, `products/`, `open-source/`, `legal/`, and `changelog/` are planning/source folders for the company ecosystem.
+- `public/og/` and `public/icons/` contain crawler and install assets.
+
+## Public Ecosystem
+
+- `/docs` documents brand, engineering, products, APIs, blog, architecture, contributing, and open-source standards.
+- `/blog` includes categories, tags, search, article routes, RSS, and MDX-ready source files.
+- `/products/buildnest` and `/products/aaspas` are prepared product landing pages.
+- `/roadmap`, `/changelog`, `/legal`, and `/work/case-studies` support company transparency and future updates.
 
 ## Quality Gates
 

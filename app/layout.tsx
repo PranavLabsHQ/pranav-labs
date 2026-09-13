@@ -43,10 +43,10 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: "/brand/pranav-labs-app-icon.png",
-        width: 512,
-        height: 512,
-        alt: "Pranav Labs brand mark",
+        url: "/og/pranav-labs-og.svg",
+        width: 1200,
+        height: 630,
+        alt: "Pranav Labs - Software built to last",
       },
     ],
     type: "website",
@@ -56,10 +56,10 @@ export const metadata: Metadata = {
     follow: true,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Pranav Labs - Software built to last",
     description: siteConfig.description,
-    images: ["/brand/pranav-labs-app-icon.png"],
+    images: ["/og/pranav-labs-og.svg"],
   },
 };
 
@@ -84,7 +84,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     logo: `${siteConfig.url}/brand/pranav-labs-app-icon.png`,
     email: siteConfig.email,
     description: siteConfig.description,
-    sameAs: ["https://github.com/ItzPranav61"],
+    sameAs: ["https://github.com/PranavLabsHQ"],
   };
 
   return (

@@ -1,41 +1,43 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
+import { ContentGrid } from "@/components/shared/ContentGrid";
 import { PageHero } from "@/components/shared/PageHero";
 import { CtaSection } from "@/components/sections/CtaSection";
-import { roadmapItems } from "@/content/site";
+import { products } from "@/content/ecosystem";
 
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "The product direction for Pranav Labs, from engineering studio to product company.",
+    "The product direction for Pranav Labs, including BuildNest and Aaspas.",
 };
 
 export default function ProductsPage() {
   return (
     <>
       <PageHero
-        description="The long-term direction is reusable software: AI assistants, workflow platforms, developer utilities, and business operating systems."
+        description="Pranav Labs is building reusable software alongside client systems. The first product tracks are prepared for public updates, changelogs, and roadmap work."
         eyebrow="Products"
         title="Products are the long-term destination."
       />
       <section className="bg-background py-20 md:py-32">
-        <div className="container-wide grid gap-5 md:grid-cols-2">
-          {roadmapItems.map((item) => {
-            const Icon = item.icon;
-
-            return (
-              <div
-                className="rounded-xl border border-border bg-card p-6 shadow-sm"
-                key={item.title}
-              >
-                <Icon aria-hidden="true" className="h-6 w-6 text-primary" />
-                <h2 className="mt-5 text-2xl font-semibold">{item.title}</h2>
-                <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  {item.description}
-                </p>
-              </div>
-            );
-          })}
+        <div className="container-wide space-y-10">
+          <ContentGrid
+            items={products.map((product) => ({
+              title: product.name,
+              description: product.description,
+              href: `/products/${product.slug}`,
+              meta: product.status,
+            }))}
+          />
+          <Link
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary"
+            href="/roadmap"
+          >
+            View public roadmap
+            <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </Link>
         </div>
       </section>
       <CtaSection />
