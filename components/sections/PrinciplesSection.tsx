@@ -1,5 +1,11 @@
 import { FadeIn } from "@/components/shared/FadeIn";
 import { SectionHeader } from "@/components/shared/SectionHeader";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { principles } from "@/content/site";
 
 export function PrinciplesSection() {
@@ -17,15 +23,15 @@ export function PrinciplesSection() {
 
             return (
               <FadeIn delay={index * 0.04} key={principle.title}>
-                <div className="h-full rounded-xl border border-border bg-card p-6 shadow-sm transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-md">
-                  <Icon aria-hidden="true" className="h-6 w-6 text-primary" />
-                  <h3 className="mt-5 text-xl font-semibold">
-                    {principle.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    {principle.description}
-                  </p>
-                </div>
+                <Card className="h-full">
+                  <CardHeader>
+                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-secondary">
+                      <Icon aria-hidden="true" className="h-5 w-5 text-primary" />
+                    </div>
+                    <CardTitle>{principle.title}</CardTitle>
+                    <CardDescription>{principle.description}</CardDescription>
+                  </CardHeader>
+                </Card>
               </FadeIn>
             );
           })}

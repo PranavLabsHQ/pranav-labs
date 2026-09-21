@@ -1,11 +1,20 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Loader2 } from "lucide-react";
+import { ArrowRight, CheckCircle2, CircleAlert, Loader2 } from "lucide-react";
 
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { getWhatsAppHref } from "@/lib/contact";
 
@@ -16,7 +25,7 @@ type FieldErrors = Partial<
 >;
 
 export function ContactForm() {
-  const startedAt = useMemo(() => Date.now(), []);
+  const startedAt = useRef(Date.now());
   const [state, setState] = useState<FormState>("idle");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState<FieldErrors>({});
@@ -41,7 +50,7 @@ export function ContactForm() {
           timeline: formData.get("timeline"),
           project: formData.get("project"),
           website: formData.get("website"),
-          startedAt,
+          startedAt: startedAt.current,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -61,6 +70,7 @@ export function ContactForm() {
       }
 
       form.reset();
+      startedAt.current = Date.now();
       setState("success");
       setMessage("Thanks. Your message was sent. We will reply by email.");
     } catch {
@@ -70,111 +80,121 @@ export function ContactForm() {
   }
 
   return (
-    <form
-      className="grid gap-5 rounded-xl border border-border bg-card p-6 shadow-sm"
-      noValidate
-      onSubmit={handleSubmit}
-    >
-      <input
-        aria-hidden="true"
-        autoComplete="off"
-        className="hidden"
-        name="website"
-        tabIndex={-1}
-        type="text"
-      />
-      <div className="grid gap-5 md:grid-cols-2">
-        <label className="grid gap-2 text-sm font-medium" htmlFor="name">
-          Name
-          <Input
-            aria-describedby={errors.name ? "name-error" : undefined}
-            aria-invalid={Boolean(errors.name)}
-            autoComplete="name"
-            id="name"
-            name="name"
-            required
+    <Card className="h-fit">
+      <CardHeader>
+        <CardTitle>Project details</CardTitle>
+        <CardDescription>
+          Required fields are marked. We use this information only to respond
+          to your inquiry.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form className="grid gap-5" noValidate onSubmit={handleSubmit}>
+          <input
+            aria-hidden="true"
+            autoComplete="off"
+            className="hidden"
+            name="website"
+            tabIndex={-1}
+            type="text"
           />
-          {errors.name ? (
-            <span className="text-sm text-destructive" id="name-error">
-              {errors.name}
-            </span>
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="grid gap-2">
+              <Label htmlFor="name">Name *</Label>
+              <Input
+                aria-describedby={errors.name ? "name-error" : undefined}
+                aria-invalid={Boolean(errors.name)}
+                autoComplete="name"
+                id="name"
+                name="name"
+                required
+              />
+              {errors.name ? (
+                <span className="text-sm text-destructive" id="name-error">
+                  {errors.name}
+                </span>
+              ) : null}
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="email">Email *</Label>
+              <Input
+                aria-describedby={errors.email ? "email-error" : undefined}
+                aria-invalid={Boolean(errors.email)}
+                autoComplete="email"
+                id="email"
+                name="email"
+                required
+                type="email"
+              />
+              {errors.email ? (
+                <span className="text-sm text-destructive" id="email-error">
+                  {errors.email}
+                </span>
+              ) : null}
+            </div>
+          </div>
+          <div className="grid gap-5 md:grid-cols-3">
+            <div className="grid gap-2">
+              <Label htmlFor="company">Company</Label>
+              <Input autoComplete="organization" id="company" name="company" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="budget">Budget</Label>
+              <Input id="budget" name="budget" placeholder="Optional" />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="timeline">Timeline</Label>
+              <Input id="timeline" name="timeline" placeholder="Optional" />
+            </div>
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="project">Project *</Label>
+            <Textarea
+              aria-describedby={errors.project ? "project-error" : undefined}
+              aria-invalid={Boolean(errors.project)}
+              id="project"
+              name="project"
+              placeholder="What are you trying to build, automate, or improve?"
+              required
+            />
+            {errors.project ? (
+              <span className="text-sm text-destructive" id="project-error">
+                {errors.project}
+              </span>
+            ) : null}
+          </div>
+          {message ? (
+            <Alert
+              aria-live="polite"
+              variant={state === "error" ? "destructive" : "default"}
+            >
+              {state === "error" ? (
+                <CircleAlert aria-hidden="true" />
+              ) : (
+                <CheckCircle2 aria-hidden="true" className="text-primary" />
+              )}
+              <AlertTitle>
+                {state === "success" ? "Inquiry received" : "Unable to send"}
+              </AlertTitle>
+              <AlertDescription>{message}</AlertDescription>
+            </Alert>
           ) : null}
-        </label>
-        <label className="grid gap-2 text-sm font-medium" htmlFor="email">
-          Email
-          <Input
-            aria-describedby={errors.email ? "email-error" : undefined}
-            aria-invalid={Boolean(errors.email)}
-            autoComplete="email"
-            id="email"
-            name="email"
-            required
-            type="email"
-          />
-          {errors.email ? (
-            <span className="text-sm text-destructive" id="email-error">
-              {errors.email}
-            </span>
-          ) : null}
-        </label>
-      </div>
-      <div className="grid gap-5 md:grid-cols-3">
-        <label className="grid gap-2 text-sm font-medium" htmlFor="company">
-          Company
-          <Input autoComplete="organization" id="company" name="company" />
-        </label>
-        <label className="grid gap-2 text-sm font-medium" htmlFor="budget">
-          Budget
-          <Input id="budget" name="budget" placeholder="Optional" />
-        </label>
-        <label className="grid gap-2 text-sm font-medium" htmlFor="timeline">
-          Timeline
-          <Input id="timeline" name="timeline" placeholder="Optional" />
-        </label>
-      </div>
-      <label className="grid gap-2 text-sm font-medium" htmlFor="project">
-        Project
-        <Textarea
-          aria-describedby={errors.project ? "project-error" : undefined}
-          aria-invalid={Boolean(errors.project)}
-          id="project"
-          name="project"
-          placeholder="What are you trying to build, automate, or improve?"
-          required
-        />
-        {errors.project ? (
-          <span className="text-sm text-destructive" id="project-error">
-            {errors.project}
-          </span>
-        ) : null}
-      </label>
-      <div aria-live="polite" className="min-h-6 text-sm">
-        {message ? (
-          <p
-            className={
-              state === "success" ? "text-primary" : "text-destructive"
-            }
-          >
-            {message}
-          </p>
-        ) : null}
-      </div>
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <Button disabled={state === "loading"} type="submit">
-          {state === "loading" ? (
-            <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />
-          ) : state === "success" ? (
-            <CheckCircle2 aria-hidden="true" className="h-4 w-4" />
-          ) : null}
-          {state === "loading" ? "Sending" : "Send Inquiry"}
-        </Button>
-        <Button asChild variant="secondary">
-          <Link href={whatsAppHref} rel="noreferrer" target="_blank">
-            Message on WhatsApp
-            <ArrowRight aria-hidden="true" className="h-4 w-4" />
-          </Link>
-        </Button>
-      </div>
-    </form>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button disabled={state === "loading"} type="submit">
+              {state === "loading" ? (
+                <Loader2 aria-hidden="true" className="h-4 w-4 animate-spin" />
+              ) : null}
+              {state === "loading" ? "Sending" : "Send Inquiry"}
+            </Button>
+            <Button asChild variant="secondary">
+              <Link href={whatsAppHref} rel="noreferrer" target="_blank">
+                Message on WhatsApp
+                <ArrowRight aria-hidden="true" className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </form>
+      </CardContent>
+    </Card>
   );
 }
