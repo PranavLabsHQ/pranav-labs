@@ -10,19 +10,19 @@
   --card-foreground: 0 0% 7%;
   --popover: 0 0% 100%;
   --popover-foreground: 0 0% 7%;
-  --primary: 221 83% 53%;
+  --primary: 223 100% 50%;
   --primary-foreground: 0 0% 100%;
   --secondary: 214 28% 95%;
   --secondary-foreground: 0 0% 9%;
   --muted: 214 28% 95%;
   --muted-foreground: 222 16% 42%;
-  --accent: 221 83% 53%;
+  --accent: 223 100% 50%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
   --border: 214 22% 88%;
   --input: 0 0% 82%;
-  --ring: 221 83% 53%;
+  --ring: 223 100% 50%;
   --radius: 0.625rem;
 }
 
@@ -33,19 +33,19 @@
   --card-foreground: 0 0% 98%;
   --popover: 0 0% 8%;
   --popover-foreground: 0 0% 98%;
-  --primary: 221 83% 58%;
+  --primary: 223 100% 50%;
   --primary-foreground: 0 0% 100%;
   --secondary: 0 0% 12%;
   --secondary-foreground: 0 0% 98%;
   --muted: 0 0% 13%;
   --muted-foreground: 0 0% 68%;
-  --accent: 221 83% 58%;
+  --accent: 223 100% 50%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 74% 52%;
   --destructive-foreground: 0 0% 100%;
   --border: 0 0% 17%;
   --input: 0 0% 22%;
-  --ring: 221 83% 58%;
+  --ring: 223 100% 50%;
 }
 
 @theme inline {
@@ -148,6 +148,121 @@ body {
 
 .text-balance {
   text-wrap: balance;
+}
+
+.brand-card {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  border-top-color: #0047ff;
+  border-top-width: 2px;
+  color: #0a0a0a;
+  transform: translateY(0);
+  transition:
+    border-color 200ms ease-out,
+    box-shadow 200ms ease-out;
+}
+
+.brand-card:hover {
+  border-color: #d1d5db;
+  border-top-color: #0047ff;
+  box-shadow: 0 10px 24px rgb(0 71 255 / 0.08);
+  transform: translateY(0);
+}
+
+.featured-work-card {
+  transform: translateY(0) scale(1);
+  transition:
+    border-color 200ms ease-out,
+    box-shadow 200ms ease-out,
+    transform 200ms ease-out;
+}
+
+.featured-work-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 16px 36px rgb(0 71 255 / 0.1);
+  transform: translateY(-4px) scale(1.01);
+}
+
+.project-status-badge {
+  background: #ffffff;
+  border-color: #0047ff;
+  color: #0047ff;
+}
+
+.featured-work-heading h2 {
+  color: #0a0a0a;
+}
+
+.featured-work-heading p {
+  color: #525252;
+}
+
+.featured-work-heading > div:first-child {
+  background: #ffffff;
+  border-color: #0047ff;
+  color: #0047ff;
+}
+
+.principle-card,
+.principle-card:hover {
+  border-color: #e5e7eb;
+  box-shadow: none;
+  transform: none;
+}
+
+.principle-icon {
+  color: #0047ff;
+}
+
+.process-step-card,
+.process-step-card:hover {
+  border-color: #e5e7eb;
+  box-shadow: none;
+  transform: none;
+}
+
+.process-number-badge {
+  background: #ffffff;
+  border-color: #0047ff;
+  color: #0047ff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  height: 3.5rem;
+  justify-content: center;
+  min-width: 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.final-cta-button,
+.final-cta-button:hover,
+.final-cta-button:active {
+  background: #ffffff;
+  border-color: #ffffff;
+  box-shadow: none;
+  color: #0047ff;
+  transform: none;
+  transition: none;
+}
+
+.footer-divider {
+  border-color: #e5e7eb;
+}
+
+@media (min-width: 1024px) {
+  .process-grid {
+    position: relative;
+  }
+
+  .process-grid::before {
+    border-top: 1px solid rgb(0 71 255 / 0.2);
+    content: "";
+    left: 3.75rem;
+    position: absolute;
+    right: calc((100% - 6rem) / 4 - 3.75rem);
+    top: 3.75rem;
+    z-index: 1;
+  }
 }
 
 @media (min-width: 768px) {

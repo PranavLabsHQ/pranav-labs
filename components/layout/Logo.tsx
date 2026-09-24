@@ -21,7 +21,7 @@ export function Logo({ compact = false }: LogoProps) {
         width={36}
       />
       {!compact ? (
-        <span className="text-sm font-semibold tracking-[-0.01em] text-foreground">
+        <span className="text-sm font-semibold text-neutral-950">
           Pranav Labs
         </span>
       ) : null}

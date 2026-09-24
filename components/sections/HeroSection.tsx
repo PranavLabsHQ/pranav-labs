@@ -1,61 +1,49 @@
 import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
-import { FadeIn } from "@/components/shared/FadeIn";
-import { SystemDiagram } from "@/components/shared/SystemDiagram";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { BackgroundLines } from "@/components/ui/background-lines";
+import { HeroHighlight, Highlight } from "@/components/ui/hero-highlight";
 import { getWhatsAppHref } from "@/lib/contact";
-
-const proofPoints = [
-  "AI products",
-  "Automation systems",
-  "Developer tools",
-  "Business systems",
-];
 
 export function HeroSection() {
   const whatsAppHref = getWhatsAppHref();
 
   return (
-    <section className="aurora-surface relative overflow-hidden">
-      <div className="absolute inset-0 subtle-grid opacity-70" />
-      <div className="container-wide relative grid gap-10 py-16 md:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14 lg:py-28 xl:py-32">
-        <FadeIn className="space-y-7">
-          <Badge>Engineering Ideas Into Impact.</Badge>
-          <div className="space-y-5">
-            <h1 className="text-balance max-w-4xl text-5xl font-bold tracking-[-0.03em] text-foreground md:text-7xl">
-              We build software.
-            </h1>
-            <p className="max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
-              Pranav Labs builds AI products, automation systems, developer
-              tools, and business software for teams that need reliable systems.
-            </p>
+    <BackgroundLines
+      className="relative flex h-auto min-h-[42rem] items-center justify-center overflow-hidden bg-white px-5 pb-16 pt-28 md:min-h-[calc(100svh-2rem)] md:px-8 md:pb-20 md:pt-32"
+      svgOptions={{ duration: 18 }}
+    >
+      <HeroHighlight
+        className="mx-auto w-full max-w-5xl"
+        containerClassName="h-auto min-h-0 bg-transparent dark:bg-transparent"
+      >
+        <div className="flex flex-col items-center gap-7 text-center">
+          <h1 className="text-balance text-5xl font-semibold leading-[1.08] text-neutral-950 md:text-7xl lg:text-8xl">
+            Software built around your <Highlight>business.</Highlight>
+          </h1>
+          <p className="text-balance max-w-3xl text-base leading-7 text-neutral-600 md:text-xl md:leading-8">
+            From customer-facing websites to AI and automation, we build reliable
+            systems that turn business needs into working software.
+          </p>
+          <div className="flex w-full flex-col items-center justify-center gap-3 pt-2 sm:w-auto sm:flex-row">
+            <Link
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-[#0047FF] px-6 text-sm font-semibold text-white shadow-lg shadow-[#0047FF]/15 transition-colors hover:bg-[#0039cc] sm:w-auto"
+              href={whatsAppHref}
+              rel="noreferrer"
+              target="_blank"
+            >
+              Start a Project
+              <ArrowRight aria-hidden="true" className="size-4" />
+            </Link>
+            <Link
+              className="inline-flex h-12 w-full items-center justify-center rounded-md border border-[#0047FF]/25 bg-white/80 px-6 text-sm font-semibold text-[#0047FF] backdrop-blur-sm transition-colors hover:bg-[#0047FF]/5 sm:w-auto"
+              href="/work"
+            >
+              Explore Work
+            </Link>
           </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg">
-              <Link href={whatsAppHref} rel="noreferrer" target="_blank">
-                Start a Project
-                <ArrowRight aria-hidden="true" className="h-4 w-4" />
-              </Link>
-            </Button>
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/work">Explore Work</Link>
-            </Button>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {proofPoints.map((item) => (
-              <div className="flex items-center gap-3 text-sm" key={item}>
-                <CheckCircle2 aria-hidden="true" className="h-4 w-4 text-primary" />
-                <span className="text-muted-foreground">{item}</span>
-              </div>
-            ))}
-          </div>
-        </FadeIn>
-        <FadeIn delay={0.12}>
-          <SystemDiagram />
-        </FadeIn>
-      </div>
-    </section>
+        </div>
+      </HeroHighlight>
+    </BackgroundLines>
   );
 }

@@ -92,7 +92,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "Contact delivery is not configured. Email hello@pranavlabs.com directly.",
+          "Contact delivery is not configured. Email hello.pranavlabs@gmail.com directly.",
       },
       { status: 503 },
     );

@@ -1,32 +1,40 @@
-import { SectionHeader } from "@/components/shared/SectionHeader";
 import { technologyGroups } from "@/content/site";
 
 export function TechnologyStackSection() {
   return (
-    <section className="border-y border-border bg-card py-20 md:py-32">
-      <div className="container-wide grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <SectionHeader
-          description="Tools are chosen for maintainability, speed, and long-term value. The stack can evolve; the decision filter stays stable."
-          eyebrow="Technology"
-          title="A modern stack for reliable software."
-        />
-        <div className="grid gap-5 sm:grid-cols-2">
+    <section
+      aria-labelledby="technology-heading"
+      className="border-t border-neutral-100 bg-white py-16 md:py-20"
+    >
+      <div className="container-wide flex flex-col gap-10 md:gap-12">
+        <div className="flex max-w-2xl flex-col gap-3">
+          <p className="text-xs font-medium uppercase text-neutral-500">
+            Technology
+          </p>
+          <h2
+            className="text-balance text-2xl font-semibold leading-tight text-neutral-950 md:text-3xl"
+            id="technology-heading"
+          >
+            A practical stack for reliable software.
+          </h2>
+          <p className="max-w-xl text-sm leading-6 text-neutral-600">
+            Tools are chosen for maintainability, speed, and long-term value.
+          </p>
+        </div>
+
+        <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
           {technologyGroups.map((group) => (
-            <div
-              className="rounded-xl border border-border bg-background p-6 shadow-sm"
-              key={group.title}
-            >
-              <h3 className="text-lg font-semibold">{group.title}</h3>
-              <div className="mt-5 flex flex-wrap gap-2">
+            <div className="flex flex-col gap-4" key={group.title}>
+              <h3 className="text-xs font-medium uppercase text-neutral-500">
+                {group.title}
+              </h3>
+              <ul className="flex flex-col gap-2">
                 {group.items.map((item) => (
-                  <span
-                    className="rounded-full border border-border px-3 py-1 text-sm text-muted-foreground"
-                    key={item}
-                  >
+                  <li className="text-sm leading-5 text-neutral-700" key={item}>
                     {item}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

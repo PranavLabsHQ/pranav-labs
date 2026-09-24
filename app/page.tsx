@@ -5,7 +5,7 @@ import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TechnologyStackSection } from "@/components/sections/TechnologyStackSection";
-import { TrustedTechnologies } from "@/components/sections/TrustedTechnologies";
+import { ValuePropositionSection } from "@/components/sections/ValuePropositionSection";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <TrustedTechnologies />
+      <ValuePropositionSection />
       <ServicesSection />
       <FeaturedProjectsSection />
       <PrinciplesSection />
