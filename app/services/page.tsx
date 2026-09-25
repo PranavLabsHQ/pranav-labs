@@ -3,7 +3,6 @@ import { Gauge, Handshake, ShieldCheck } from "lucide-react";
 import { PageHero } from "@/components/shared/PageHero";
 import { SectionHeader } from "@/components/shared/SectionHeader";
 import { CtaSection } from "@/components/sections/CtaSection";
-import { ProcessSection } from "@/components/sections/ProcessSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import {
   Card,
@@ -77,7 +76,6 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
-      <ProcessSection />
       <CtaSection />
     </>
   );

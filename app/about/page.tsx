@@ -3,7 +3,6 @@ import { ArrowRight, Building2, Layers3, PackageCheck } from "lucide-react";
 
 import { PageHero } from "@/components/shared/PageHero";
 import { CtaSection } from "@/components/sections/CtaSection";
-import { PrinciplesSection } from "@/components/sections/PrinciplesSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,7 +12,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { processSteps } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 const companyStages = [
@@ -48,7 +46,7 @@ export default function AboutPage() {
       <PageHero
         description="Pranav Labs is an engineering-first software company focused on practical AI, automation, developer tools, and modern business software."
         eyebrow="About"
-        title="A software company built around trust, clarity, and execution."
+        title="We build software businesses can rely on."
       />
       <section className="bg-background py-20 md:py-32">
         <div className="container-wide grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
@@ -64,9 +62,11 @@ export default function AboutPage() {
               automation.
               </p>
               <p>
-              The company starts as an engineering studio and grows toward a
-              product company. Services fund product development. Products
-              create long-term value.
+                We start every engagement by solving the real problem in front
+                of us, not selling a template. That focus on real outcomes is
+                what lets us build software that holds up &mdash; for the
+                business we&apos;re working with today, and for every one after
+                it.
               </p>
             </div>
             <Button asChild variant="secondary">
@@ -108,30 +108,34 @@ export default function AboutPage() {
           </Card>
           </div>
       </section>
-      <PrinciplesSection />
       <section className="border-y border-border bg-card/50 py-20 md:py-32">
-        <div className="container-wide space-y-10">
-          <div className="max-w-3xl space-y-5">
-            <Badge variant="outline">Operating method</Badge>
+        <div className="container-wide grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <div className="space-y-5">
+            <Badge variant="outline">Founder</Badge>
             <h2 className="text-3xl font-bold tracking-normal md:text-5xl">
-              How we work
+              Started by one engineer who got tired of bad software.
             </h2>
-            <p className="text-base leading-7 text-muted-foreground md:text-lg">
-              Each stage reduces uncertainty before the next one adds cost.
-            </p>
           </div>
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {processSteps.map((step, index) => (
-              <Card className="h-full bg-background" key={step.title}>
-                <CardHeader>
-                  <Badge className="mb-3 w-fit" variant="secondary">
-                    0{index + 1}
-                  </Badge>
-                  <CardTitle>{step.title}</CardTitle>
-                  <CardDescription>{step.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
+
+          <div className="space-y-5 text-base leading-7 text-muted-foreground md:text-lg">
+            <p>
+              Pranav Labs started as a simple idea: most small businesses
+              don&apos;t have a bad product or a bad service &mdash; they have a
+              website and systems that don&apos;t reflect either. Customers
+              can&apos;t find them, can&apos;t trust them, or can&apos;t book them,
+              and that gap costs more than most owners realize.
+            </p>
+            <p>
+              I started building software because I wanted to close that gap
+              properly &mdash; not with another templated site, but with systems
+              built the way real engineering gets built: understand the problem
+              first, then design something that holds up.
+            </p>
+            <p>
+              Pranav Labs is still early. That&apos;s not something to hide
+              &mdash; it&apos;s why every project gets full attention, and why the
+              bar for what we ship stays high.
+            </p>
           </div>
         </div>
       </section>

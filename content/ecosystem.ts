@@ -41,7 +41,6 @@ export type BlogPost = {
   category: BlogCategory;
   tags: string[];
   date: string;
-  readingTime: string;
   body: string[];
 };
 
@@ -50,8 +49,6 @@ export type OpenSourceProject = {
   slug: string;
   status: "Planned" | "Research" | "Designing" | "Building";
   description: string;
-  githubHref: string;
-  docsHref: string;
   icon: LucideIcon;
 };
 
@@ -103,7 +100,6 @@ export const blogPosts: BlogPost[] = [
     category: "Engineering",
     tags: ["reliability", "delivery", "operations"],
     date: "2026-09-13",
-    readingTime: "4 min read",
     body: [
       "A product is not finished when the interface works. It is ready when the system can be deployed, monitored, changed, and explained without drama.",
       "The early Pranav Labs standard is simple: prefer boring infrastructure, clear ownership, typed boundaries, accessible interfaces, and documentation that helps the next engineer move faster.",
@@ -118,7 +114,6 @@ export const blogPosts: BlogPost[] = [
     category: "AI",
     tags: ["agents", "evaluation", "workflow"],
     date: "2026-09-13",
-    readingTime: "5 min read",
     body: [
       "AI does not remove the need for product judgment. It raises the cost of unclear workflows because vague systems are harder to evaluate.",
       "The right starting point is a repeated job: research a domain, classify an input, prepare a document, route a request, summarize context, or support a decision.",
@@ -133,7 +128,6 @@ export const blogPosts: BlogPost[] = [
     category: "Automation",
     tags: ["workflow", "business systems", "process"],
     date: "2026-09-13",
-    readingTime: "3 min read",
     body: [
       "Good automation removes repeated effort without hiding how work happens. Bad automation moves confusion into code.",
       "Before building, define the trigger, owner, data source, success state, fallback path, and audit trail. If those are unclear, the workflow is not ready.",
@@ -149,8 +143,6 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Designing",
     description:
       "A small set of accessible interface primitives for Pranav Labs products.",
-    githubHref: "https://github.com/PranavLabsHQ",
-    docsHref: "/docs/open-source",
     icon: Blocks,
   },
   {
@@ -159,8 +151,6 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Planned",
     description:
       "A focused icon set for engineering, automation, and product interfaces.",
-    githubHref: "https://github.com/PranavLabsHQ",
-    docsHref: "/docs/open-source",
     icon: Sparkles,
   },
   {
@@ -169,8 +159,6 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Research",
     description:
       "Command-line utilities for scaffolding, checks, release notes, and project hygiene.",
-    githubHref: "https://github.com/PranavLabsHQ",
-    docsHref: "/docs/open-source",
     icon: TerminalSquare,
   },
   {
@@ -179,8 +167,6 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Planned",
     description:
       "A production-ready Next.js starter shaped around accessibility, SEO, and clean delivery.",
-    githubHref: "https://github.com/PranavLabsHQ",
-    docsHref: "/docs/open-source",
     icon: Package,
   },
   {
@@ -189,8 +175,6 @@ export const openSourceProjects: OpenSourceProject[] = [
     status: "Planned",
     description:
       "A future product foundation for auth, billing, dashboards, teams, and audit logs.",
-    githubHref: "https://github.com/PranavLabsHQ",
-    docsHref: "/docs/open-source",
     icon: Building2,
   },
 ];

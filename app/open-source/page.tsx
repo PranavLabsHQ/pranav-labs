@@ -2,10 +2,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { PageHero } from "@/components/shared/PageHero";
-import { Button } from "@/components/ui/button";
+import { CtaSection } from "@/components/sections/CtaSection";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -46,20 +45,6 @@ export default function OpenSourcePage() {
                   <CardTitle>{project.name}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex flex-wrap gap-3">
-                  <Button asChild size="sm" variant="secondary">
-                    <Link
-                      href={project.githubHref}
-                      rel="noreferrer"
-                      target="_blank"
-                    >
-                      GitHub
-                    </Link>
-                  </Button>
-                  <Button asChild size="sm" variant="ghost">
-                    <Link href={project.docsHref}>Docs</Link>
-                  </Button>
-                </CardContent>
               </Card>
             );
           })}
@@ -74,6 +59,7 @@ export default function OpenSourcePage() {
           </Link>
         </div>
       </section>
+      <CtaSection />
     </>
   );
 }
