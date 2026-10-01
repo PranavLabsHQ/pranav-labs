@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Search } from "lucide-react";
 
 import { PageHero } from "@/components/shared/PageHero";
-import { CtaSection } from "@/components/sections/CtaSection";
 import {
   Card,
   CardDescription,
@@ -10,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { blogPosts } from "@/content/ecosystem";
+import { blogCategories, blogPosts } from "@/content/ecosystem";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -40,9 +39,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
     return matchesCategory && matchesTag && matchesQuery;
   });
-  const categories = Array.from(
-    new Set(blogPosts.map((post) => post.category)),
-  );
   const tags = Array.from(new Set(blogPosts.flatMap((post) => post.tags)));
 
   return (
@@ -75,24 +71,14 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           </form>
           <div className="flex flex-wrap gap-2">
             <Link
-              aria-current={!category && !tag ? "page" : undefined}
-              className={`rounded-full border px-3 py-1 text-sm transition-colors hover:text-foreground ${
-                !category && !tag
-                  ? "border-primary text-foreground"
-                  : "border-border text-muted-foreground"
-              }`}
+              className="rounded-full border border-border px-3 py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
               href="/blog"
             >
               All
             </Link>
-            {categories.map((item) => (
+            {blogCategories.map((item) => (
               <Link
-                aria-current={category === item ? "page" : undefined}
-                className={`rounded-full border px-3 py-1 text-sm transition-colors hover:text-foreground ${
-                  category === item
-                    ? "border-primary text-foreground"
-                    : "border-border text-muted-foreground"
-                }`}
+                className="rounded-full border border-border px-3 py-1 text-sm text-muted-foreground transition-colors hover:text-foreground"
                 href={`/blog?category=${encodeURIComponent(item)}`}
                 key={item}
               >
@@ -103,12 +89,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           <div className="flex flex-wrap gap-2">
             {tags.map((item) => (
               <Link
-                aria-current={tag === item ? "page" : undefined}
-                className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors hover:text-foreground ${
-                  tag === item
-                    ? "border-primary bg-background text-foreground"
-                    : "border-transparent bg-secondary text-muted-foreground"
-                }`}
+                className="rounded-full bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
                 href={`/blog?tag=${encodeURIComponent(item)}`}
                 key={item}
               >
@@ -125,7 +106,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
               <Card className="h-full">
                 <CardHeader>
                   <p className="text-sm font-medium text-primary">
-                    {post.category}
+                    {post.category} - {post.readingTime}
                   </p>
                   <CardTitle>{post.title}</CardTitle>
                   <CardDescription>{post.description}</CardDescription>
@@ -135,7 +116,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
           ))}
         </div>
       </section>
-      <CtaSection />
     </>
   );
 }

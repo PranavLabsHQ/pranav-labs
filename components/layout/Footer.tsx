@@ -1,101 +1,91 @@
 import Link from "next/link";
 
 import { Logo } from "@/components/layout/Logo";
+import { Separator } from "@/components/ui/separator";
 import { navigationItems, siteConfig } from "@/content/site";
 
-const legalLinks = [
+const footerLinks = [
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
+  { label: "Cookies", href: "/legal/cookies" },
+  { label: "GitHub", href: "https://github.com/PranavLabsHQ" },
 ];
 
 const ecosystemLinks = [
-  { label: "GitHub", href: "https://github.com/ItzPranav61" },
-  {
-    label: "LinkedIn",
-    href: "https://www.linkedin.com/in/pranav-sawant-1061a63a5",
-  },
+  { label: "Docs", href: "/docs" },
+  { label: "Roadmap", href: "/roadmap" },
+  { label: "Changelog", href: "/changelog" },
+  { label: "Case Studies", href: "/work/case-studies" },
 ];
-
-const footerLinkClassName =
-  "w-fit text-sm text-neutral-600 underline-offset-4 visited:text-neutral-600 hover:text-[#0047FF] hover:underline";
 
 export function Footer() {
   return (
-    <footer className="bg-white text-neutral-950">
-      <div className="container-wide py-16 md:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1.6fr_0.8fr_0.8fr_0.8fr] lg:gap-16">
-          <div className="flex max-w-lg flex-col gap-5">
+    <footer className="border-t border-border bg-background">
+      <div className="container-wide py-12 md:py-16">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr_1fr]">
+          <div className="space-y-5">
             <Logo />
-            <p className="max-w-md text-sm leading-6 text-neutral-600">
-              Pranav Labs builds AI products, automation systems, and business
-              software that help serious teams operate better.
+            <p className="max-w-md text-sm leading-6 text-muted-foreground">
+              Pranav Labs builds AI products, automation systems, developer
+              tools, and business software designed to last.
             </p>
           </div>
-
-          <nav aria-label="Company links">
-            <h2 className="text-xs font-medium uppercase text-neutral-500">
-              Company
-            </h2>
-            <ul className="mt-4 flex flex-col gap-3">
-              {navigationItems.slice(0, 4).map((item) => (
-                <li key={item.href}>
-                  <Link className={footerLinkClassName} href={item.href}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Contact and legal links">
-            <h2 className="text-xs font-medium uppercase text-neutral-500">
-              Contact / Legal
-            </h2>
-            <ul className="mt-4 flex flex-col gap-3">
-              <li>
-                <a
-                  className={footerLinkClassName}
-                  href={`mailto:${siteConfig.email}`}
+          <div>
+            <h2 className="text-sm font-semibold">Company</h2>
+            <div className="mt-4 grid gap-3">
+              {navigationItems.slice(0, 5).map((item) => (
+                <Link
+                  className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
+                  href={item.href}
+                  key={item.href}
                 >
-                  {siteConfig.email}
-                </a>
-              </li>
-              {legalLinks.map((item) => (
-                <li key={item.href}>
-                  <Link className={footerLinkClassName} href={item.href}>
-                    {item.label}
-                  </Link>
-                </li>
+                  {item.label}
+                </Link>
               ))}
-            </ul>
-          </nav>
-
-          <nav aria-label="Ecosystem links">
-            <h2 className="text-xs font-medium uppercase text-neutral-500">
-              Ecosystem
-            </h2>
-            <ul className="mt-4 flex flex-col gap-3">
+            </div>
+          </div>
+          <div>
+            <h2 className="text-sm font-semibold">Contact</h2>
+            <div className="mt-4 grid gap-3">
+              <a
+                className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
+                href={`mailto:${siteConfig.email}`}
+              >
+                {siteConfig.email}
+              </a>
+              {footerLinks.map((item) => (
+                <Link
+                  className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
+                  href={item.href}
+                  key={item.href}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h2 className="text-sm font-semibold">Ecosystem</h2>
+            <div className="mt-4 grid gap-3">
               {ecosystemLinks.map((item) => (
-                <li key={item.href}>
-                  <a
-                    className={footerLinkClassName}
-                    href={item.href}
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    {item.label}
-                  </a>
-                </li>
+                <Link
+                  className="text-sm text-muted-foreground transition-colors visited:text-muted-foreground/80 hover:text-foreground"
+                  href={item.href}
+                  key={item.href}
+                >
+                  {item.label}
+                </Link>
               ))}
-            </ul>
-          </nav>
+            </div>
+          </div>
         </div>
-
-        <div className="footer-divider mt-12 border-t pt-6 md:mt-16">
-          <p className="text-xs leading-5 text-neutral-500">
-            Copyright 2026 Pranav Labs. Built with care in India.
-          </p>
-        </div>
+        <Separator className="my-8" />
+        <p className="text-sm text-muted-foreground">
+          Copyright {new Date().getFullYear()} Pranav Labs. Built with care in
+          India.
+        </p>
       </div>
     </footer>
   );

@@ -17,8 +17,8 @@ import type { Article, NavigationItem, Project, Service } from "@/types/site";
 
 export const siteConfig = {
   name: "Pranav Labs",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://pranav-labs.vercel.app",
-  email: "hello.pranavlabs@gmail.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://pranav-labs.vercel.app",
+  email: "hello@pranavlabs.com",
   description:
     "Pranav Labs builds AI products, automation systems, developer tools, business software, and future software infrastructure.",
 };
@@ -35,28 +35,28 @@ export const navigationItems: NavigationItem[] = [
 
 export const services: Service[] = [
   {
-    title: "AI Products",
+    title: "AI products",
     description:
       "Assistants, copilots, search systems, and AI workflows designed around repeatable work.",
     capabilities: ["AI workflows", "Knowledge systems", "Agent systems"],
     icon: BrainCircuit,
   },
   {
-    title: "Automation Systems",
+    title: "Automation systems",
     description:
       "Workflow software for sales, support, documents, and internal operations.",
     capabilities: ["CRM automation", "Document flows", "Operations tooling"],
     icon: Workflow,
   },
   {
-    title: "Business Software",
+    title: "Business software",
     description:
       "Dashboards, portals, internal tools, and SaaS foundations designed for daily use.",
     capabilities: ["Admin panels", "Client portals", "Reporting systems"],
     icon: ServerCog,
   },
   {
-    title: "Developer Tools",
+    title: "Developer tools",
     description:
       "APIs, SDKs, CLIs, and utilities that help engineers ship with confidence.",
     capabilities: ["CLI tools", "APIs", "SDKs"],
@@ -68,7 +68,7 @@ export const featuredProjects: Project[] = [
   {
     title: "BuildNest",
     type: "Business platform",
-    status: "In Development",
+    status: "In development",
     description:
       "A foundation for managing project delivery, client work, and operational systems.",
     stack: ["Next.js", "PostgreSQL", "Automation"],
@@ -76,15 +76,15 @@ export const featuredProjects: Project[] = [
   {
     title: "Aaspas",
     type: "Modern web application",
-    status: "In Progress",
+    status: "In progress",
     description:
       "A local-first product direction focused on discovery, clean workflows, and reliable data.",
     stack: ["React", "Maps", "Product UX"],
   },
   {
-    title: "Internal AI Systems",
+    title: "Internal AI systems",
     type: "Automation infrastructure",
-    status: "Active Research",
+    status: "Active research",
     description:
       "Reusable workflows for research, development, documentation, testing, and delivery.",
     stack: ["OpenAI", "n8n", "TypeScript"],
