@@ -303,6 +303,7 @@ export const caseStudies: CaseStudy[] = [
     kind: "Engineering proof",
     stage: "Build later",
     featured: false,
+    liveHref: "/demos/run-log-and-replay",
     services: ["Automation", "Backend engineering", "Reliability", "Developer tools"],
     audience: "Technical buyers and operations teams that depend on business automations.",
     problem:
