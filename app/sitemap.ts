@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
 
+import { caseStudies } from "@/content/case-studies";
 import { navigationItems, siteConfig } from "@/content/site";
 import {
   blogPosts,
-  caseStudies,
   docsSections,
   products,
 } from "@/content/ecosystem";

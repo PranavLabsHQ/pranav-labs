@@ -76,15 +76,6 @@ export type DocSection = {
   sections: { title: string; body: string[] }[];
 };
 
-export type CaseStudy = {
-  slug: string;
-  title: string;
-  summary: string;
-  status: string;
-  stack: string[];
-  steps: { label: string; title: string; body: string }[];
-};
-
 export const blogCategories: BlogCategory[] = [
   "Engineering",
   "AI",
@@ -448,49 +439,6 @@ export const changelogEntries = [
     items: [
       "Refined navigation behavior, focus states, and reduced-motion support.",
       "Aligned form controls and buttons with the Pranav Labs design system.",
-    ],
-  },
-];
-
-export const caseStudies: CaseStudy[] = [
-  {
-    slug: "delivery-operating-system",
-    title: "Delivery operating system foundation",
-    summary:
-      "A reusable structure for moving from unclear client work to visible, maintainable delivery systems.",
-    status: "Internal system",
-    stack: ["Next.js", "TypeScript", "Automation", "PostgreSQL"],
-    steps: [
-      {
-        label: "Challenge",
-        title: "Project work loses clarity as it scales",
-        body: "Teams need one place to understand clients, tasks, documents, decisions, and delivery state.",
-      },
-      {
-        label: "Research",
-        title: "Map the repeated workflows",
-        body: "The system starts with recurring questions: what is blocked, what changed, what ships next, and who owns it.",
-      },
-      {
-        label: "Architecture",
-        title: "Separate product state from activity",
-        body: "Core records stay stable while events, notes, automations, and reports build around them.",
-      },
-      {
-        label: "Engineering",
-        title: "Ship in visible slices",
-        body: "Each slice should be usable, testable, documented, and ready for future automation.",
-      },
-      {
-        label: "Results",
-        title: "Clearer operations",
-        body: "The expected result is less status chasing, better handoffs, and a stronger basis for client reporting.",
-      },
-      {
-        label: "Lessons",
-        title: "Reliability starts in the workflow",
-        body: "The interface can stay simple when the workflow, data model, and ownership are clear.",
-      },
     ],
   },
 ];

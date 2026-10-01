@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { CaseStudyLedger } from "@/components/work/CaseStudyLedger";
 import { FeaturedProjectsSection } from "@/components/sections/FeaturedProjectsSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { PageHero } from "@/components/shared/PageHero";
 import { Button } from "@/components/ui/button";
+import { caseStudies } from "@/content/case-studies";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -16,6 +18,8 @@ export const metadata = createPageMetadata({
 });
 
 export default function WorkPage() {
+  const featuredStudies = caseStudies.filter((study) => study.featured);
+
   return (
     <>
       <PageHero
@@ -24,25 +28,27 @@ export default function WorkPage() {
         title="Software work with a product-company standard."
       />
       <FeaturedProjectsSection />
-      <section className="bg-background pb-20 md:pb-32">
-        <div className="container-wide rounded-xl border border-border bg-card p-6 shadow-sm md:p-8">
-          <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
+      <section className="bg-background py-20 md:py-28">
+        <div className="container-wide">
+          <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
             <div>
-              <h2 className="text-2xl font-semibold tracking-normal">
-                Case-study system
+              <p className="text-sm font-medium text-primary">Demo portfolio</p>
+              <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.025em] md:text-4xl">
+                Small systems that make the work visible.
               </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
-                Pranav Labs documents serious work through challenge, research,
-                architecture, engineering, results, and lessons.
+              <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
+                Each demo starts with a real operating problem and ends with
+                something a buyer can inspect, try, and discuss.
               </p>
             </div>
             <Button asChild variant="secondary">
               <Link href="/work/case-studies">
-                View Case Studies
+                Explore all six demos
                 <ArrowRight aria-hidden="true" className="h-4 w-4" />
               </Link>
             </Button>
           </div>
+          <CaseStudyLedger studies={featuredStudies} />
         </div>
       </section>
       <CtaSection />
