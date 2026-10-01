@@ -200,6 +200,7 @@ export const caseStudies: CaseStudy[] = [
     kind: "Flagship demo",
     stage: "Build next",
     featured: false,
+    liveHref: "/demos/operations-document-inbox",
     services: ["AI systems", "Document automation", "Internal tools", "Integrations"],
     audience: "Operations and finance teams processing repeated vendor documents.",
     problem:
