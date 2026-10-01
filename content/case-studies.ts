@@ -147,6 +147,7 @@ export const caseStudies: CaseStudy[] = [
     kind: "Flagship demo",
     stage: "Build next",
     featured: true,
+    liveHref: "/demos/field-service-proof-of-work",
     services: ["Web apps", "Mobile workflows", "Operations software", "Automation"],
     audience: "AC repair, appliance service, installation, and maintenance teams.",
     problem:
