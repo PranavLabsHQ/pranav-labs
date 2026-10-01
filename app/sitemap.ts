@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogPosts.map((item) => `/blog/${item.slug}`),
     ...products.map((item) => `/products/${item.slug}`),
     ...caseStudies.map((item) => `/work/case-studies/${item.slug}`),
+    ...caseStudies.flatMap((item) => (item.liveHref ? [item.liveHref] : [])),
   ];
 
   return routes.map((route) => ({

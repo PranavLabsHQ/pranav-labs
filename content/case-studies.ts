@@ -14,6 +14,7 @@ export type CaseStudy = {
   kind: DemoKind;
   stage: DemoStage;
   featured: boolean;
+  liveHref?: string;
   services: string[];
   audience: string;
   problem: string;
@@ -44,6 +45,7 @@ export const caseStudies: CaseStudy[] = [
     kind: "Flagship demo",
     stage: "Building first",
     featured: true,
+    liveHref: "/demos/trial-to-renewal",
     services: ["Web apps", "Automation", "Business software", "APIs"],
     audience: "Independent gyms, fitness studios, and owner-led membership businesses.",
     problem:

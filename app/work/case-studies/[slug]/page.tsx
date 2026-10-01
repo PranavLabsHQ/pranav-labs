@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check, Minus } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Minus } from "lucide-react";
 import { notFound } from "next/navigation";
 
 import { Badge } from "@/components/ui/badge";
@@ -72,6 +72,16 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
                 {study.summary}
               </p>
+              {study.liveHref ? (
+                <div className="mt-8">
+                  <Button asChild>
+                    <Link href={study.liveHref}>
+                      Open interactive demo
+                      <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+              ) : null}
             </div>
             <div className="border-l-2 border-primary/25 pl-5">
               <p className="text-sm font-semibold">Who it is for</p>
