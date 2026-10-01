@@ -96,6 +96,7 @@ export const caseStudies: CaseStudy[] = [
     kind: "Website case study",
     stage: "Building first",
     featured: true,
+    liveHref: "/demos/conversion-rebuild",
     services: ["Websites", "Frontend engineering", "Performance", "SEO"],
     audience: "Local service businesses with dated, slow, or unclear marketing sites.",
     problem:
