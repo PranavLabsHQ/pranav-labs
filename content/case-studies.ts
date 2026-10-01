@@ -252,6 +252,7 @@ export const caseStudies: CaseStudy[] = [
     kind: "Supporting demo",
     stage: "Build later",
     featured: false,
+    liveHref: "/demos/quote-to-status",
     services: ["Automation", "Business software", "Customer portals"],
     audience: "Small fabricators, contractors, distributors, and owner-led B2B service businesses.",
     problem:
